@@ -24,8 +24,8 @@
 
 <body>
   <form action=''>
-    <label for="interiors">Interiors:</label>
-    <input type="text" id="interiors" name="interiors" placeholder="Mansion, Mineshaft,...">
+    <label for="interiors">Interiors (separate each by a comma):</label>
+    <input type="text" id="interiors" name="interiors" placeholder="Mansion, Mineshaft,..." pattern="/^([A-Za-z\s'-]+)(,\s*[A-Za-z\s'-]+)*$/">
     <br>
     <label for="interiors">How many?</label>
     <input type="text" id="count" name="count">
