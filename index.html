@@ -67,10 +67,11 @@
     console.log(biomes);
     let htmlList="";
     if (list.innerHTML!="") list.innerHTML="";
-    list.innerHTML= biomes.forEach((item) => {
-    console.log(item);     
-    htmlList+="<li>"+item.item+":, "+item.percent+"</li><br/>";
-  });
+      biomes.forEach((item) => {
+      console.log(item);     
+      htmlList+="<li>"+item.item+":, "+item.percent+"</li><br/>";
+    });
+    list.innerHTML= htmlList;
     
 });
 
