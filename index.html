@@ -64,6 +64,7 @@
   
   const biomes= lottery(unparsedList.split(",").map(item => item.trim()).filter(Boolean), itemCount);
   const list= document.querySelector("ul");
+    console.log(biomes);
   biomes.forEach((item) => {
     console.log(item); 
     list.append("<li>"+item+":, "+percent+"</li>");
