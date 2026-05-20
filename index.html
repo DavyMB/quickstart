@@ -30,6 +30,9 @@
     <input type="text" id="count" name="count">
     <button type="button" name="sendButton">Calculate</button>
   </form>
+  <ul>
+    
+  </ul>
 <script>
   function lottery(items, count) {
     // Shuffle
@@ -58,7 +61,10 @@
     console.log(unparsedList);
   const itemCount= document.querySelector("#count").value;
     console.log(itemCount);
-  alert(lottery(unparsedList.split(",").map(item => item.trim()).filter(Boolean), itemCount));
+  
+  const biomes= lottery(unparsedList.split(",").map(item => item.trim()).filter(Boolean), itemCount);
+  const list= document.querySelector("ul");
+  biomes.forEach((item) => list.append("<li>"+item+":, "+percent+"</li>");
 });
 
 
