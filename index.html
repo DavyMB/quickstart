@@ -23,8 +23,15 @@
 </head>
 
 <body>
+  <form action=''>
+    <label for="interiors">Interiors:</label>
+    <input type="text" id="interiors" name="interiors">
+    <label for="interiors">How many?</label>
+    <input type="text" id="count" name="count">
+    <button type="button" name="sendButton">Calculate</button>
+  </form>
 <script>
-function lottery(items, count) {
+  function lottery(items, count) {
     // Shuffle
     const shuffled = [...items].sort(() => Math.random() - 0.5);
 
@@ -41,11 +48,19 @@ function lottery(items, count) {
         item,
         percent: ((weights[i] / total) * 100).toFixed(2) + "%"
     }));
+    
+  const button = document.querySelector("button");
+
+  button.addEventListener("click", (event) => {
+  const parsedList= document.querySelector("#interiors").value().split(",").map(item => item.trim()).filter(Boolean);
+    console.log(parsedList);
+  const itemCount= document.querySelector("#interiors").value();
+    console.log(itemCount);
+  alert(lottery(parsedList, itemCount));
+});
+
 }
 
-const options = ["A", "B", "C", "D", "E"];
-
-console.log(lottery(options, 3));
 </script>
 
 </body>
