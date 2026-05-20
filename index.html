@@ -53,11 +53,12 @@
   const button = document.querySelector("button");
 
   button.addEventListener("click", (event) => {
-  const parsedList= document.querySelector("#interiors").value().split(",").map(item => item.trim()).filter(Boolean);
-    console.log(parsedList);
-  const itemCount= document.querySelector("#interiors").value();
+  const unparsedList= document.querySelector("#interiors").value;
+    
+    console.log(unparsedList);
+  const itemCount= document.querySelector("#interiors").value;
     console.log(itemCount);
-  alert(lottery(parsedList, itemCount));
+  alert(lottery(unparsedList.split(",").map(item => item.trim()).filter(Boolean), itemCount));
 });
 
 
