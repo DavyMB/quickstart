@@ -25,7 +25,8 @@
 <body>
   <form action=''>
     <label for="interiors">Interiors:</label>
-    <input type="text" id="interiors" name="interiors">
+    <input type="text" id="interiors" name="interiors" placeholder="Mansion, Mineshaft,...">
+    <br>
     <label for="interiors">How many?</label>
     <input type="text" id="count" name="count">
     <button type="button" name="sendButton">Calculate</button>
@@ -35,7 +36,7 @@
   </ul>
 <script>
   function lottery(items, count) {
-    // Shuffle
+    if (count>items.length) {count=items.length}
     const shuffled = [...items].sort(() => Math.random() - 0.5);
 
     // Pick X items
