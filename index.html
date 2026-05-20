@@ -56,7 +56,7 @@
   const unparsedList= document.querySelector("#interiors").value;
     
     console.log(unparsedList);
-  const itemCount= document.querySelector("#interiors").value;
+  const itemCount= document.querySelector("#count").value;
     console.log(itemCount);
   alert(lottery(unparsedList.split(",").map(item => item.trim()).filter(Boolean), itemCount));
 });
