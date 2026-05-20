@@ -23,10 +23,30 @@
 </head>
 
 <body>
+<script>
+function lottery(items, count) {
+    // Shuffle
+    const shuffled = [...items].sort(() => Math.random() - 0.5);
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/app.js"></script>
+    // Pick X items
+    const selected = shuffled.slice(0, count);
+
+    // Generate random weights
+    const weights = selected.map(() => Math.random());
+
+    // Normalize to 100%
+    const total = weights.reduce((a, b) => a + b, 0);
+
+    return selected.map((item, i) => ({
+        item,
+        percent: ((weights[i] / total) * 100).toFixed(2) + "%"
+    }));
+}
+
+const options = ["A", "B", "C", "D", "E"];
+
+console.log(lottery(options, 3));
+</script>
 
 </body>
 
