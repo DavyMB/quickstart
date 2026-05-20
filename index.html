@@ -48,7 +48,8 @@
         item,
         percent: ((weights[i] / total) * 100).toFixed(2) + "%"
     }));
-    
+  }
+  
   const button = document.querySelector("button");
 
   button.addEventListener("click", (event) => {
@@ -59,7 +60,6 @@
   alert(lottery(parsedList, itemCount));
 });
 
-}
 
 </script>
 
