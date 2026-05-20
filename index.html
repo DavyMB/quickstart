@@ -56,18 +56,20 @@
   const button = document.querySelector("button");
 
   button.addEventListener("click", (event) => {
-  const unparsedList= document.querySelector("#interiors").value;
+    const unparsedList= document.querySelector("#interiors").value;
     
     console.log(unparsedList);
-  const itemCount= document.querySelector("#count").value;
+    const itemCount= document.querySelector("#count").value;
     console.log(itemCount);
   
-  const biomes= lottery(unparsedList.split(",").map(item => item.trim()).filter(Boolean), itemCount);
-  const list= document.querySelector("ul");
+    const biomes= lottery(unparsedList.split(",").map(item => item.trim()).filter(Boolean), itemCount);
+    const list= document.querySelector("ul");
     console.log(biomes);
-  biomes.forEach((item) => {
-    console.log(item); 
-    list.append("<li>"+item.item+":, "+item.percent+"</li><br/>");
+    let htmlList="";
+    if (list.innerHTML!="") list.innerHTML="";
+    list.innerHTML= biomes.forEach((item) => {
+    console.log(item);     
+    let htmlList+=("<li>"+item.item+":, "+item.percent+"</li><br/>");
   });
     
 });
